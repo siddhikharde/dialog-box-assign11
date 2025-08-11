@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dialog box</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+
 </head>
 <body>
     <div class="overlay" id="overlay">
-
+       <div class="overlay-content"> 
+        <h2>Your feedback has been submitted!</h2>
+        <div class="btn">
+            <button onclick="hideOverlay()" >Edit feedback</button>
+            <button onclick="hideOverlay(); resetFields();">Close</button>
+        </div></div>
     </div>
     <div class="container">
         <h1>Enter your feedback</h1>
         <form>
-            <textarea placeholder="Type your feedback here..."></textarea>
-            <button type="submit">Submit</button>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" placeholder="Type your feedback here..." required></textarea>
+            <button type="button" onclick="showOverlay()">Submit</button>
         </form>
     </div>
+   
 </body>
 </html>
